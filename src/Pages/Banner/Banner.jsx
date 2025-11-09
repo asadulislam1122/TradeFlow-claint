@@ -76,7 +76,7 @@ const Banner = () => {
         </motion.p>
 
         <motion.button
-          className="bg-red-600 text-white font-bold uppercase tracking-wider py-3 px-8 rounded-sm hover:bg-red-700 transition duration-300 shadow-lg"
+          className="bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-3 sm:py-4 rounded-lg transition w-full sm:w-auto"
           variants={buttonVariants}
         >
           GET A FREE QUOTE

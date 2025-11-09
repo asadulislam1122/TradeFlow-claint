@@ -1,8 +1,20 @@
-import React from "react";
+import React, { use } from "react";
 import { FcGlobe } from "react-icons/fc";
 import { Link, NavLink } from "react-router";
 import "./Navbar.css";
+import { AuthContext } from "../../Provaider/AuthProvaider";
 const Navbar = () => {
+  const { user, logOut } = use(AuthContext);
+  const handleLogOut = () => {
+    // console.log("user logout click");
+    logOut()
+      .then(() => {
+        alert("Your LogOut Susscessfully");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   const link = (
     <>
       <li>
@@ -19,6 +31,12 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink to={"/add-export"}>Add Exports</NavLink>
+      </li>
+      <li>
+        <NavLink to={"/login"}>Login</NavLink>
+      </li>
+      <li>
+        <NavLink to={"/register"}>Register</NavLink>
       </li>
     </>
   );
@@ -51,19 +69,33 @@ const Navbar = () => {
             {link}
           </ul>
         </div>
-        <Link to={"/"}>
-          {" "}
-          <a className="md:text-2xl text-xl font-semibold md:font-bold text-blue-500 ml-2 flex items-center">
-            {" "}
-            <FcGlobe className="md:w-[40px] md:h-[40px]" /> TradeFlow
-          </a>
+        <Link
+          to={"/"}
+          className="md:text-2xl text-xl font-semibold md:font-bold text-blue-500 ml-2 flex items-center"
+        >
+          <FcGlobe className="md:w-[40px] md:h-[40px]" /> TradeFlow
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{link}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <img
+          className="w-12 mr-2  rounded-[50%] object-center items-center object-cover"
+          src={`${user ? user.photoURL : " "}`}
+          alt=""
+        />
+        {user ? (
+          <button onClick={handleLogOut} className="btn btn-primary md:px-8">
+            {" "}
+            Log Out
+          </button>
+        ) : (
+          <Link to={"login"}>
+            {" "}
+            <button className="btn btn-primary md:px-8">Login</button>
+          </Link>
+        )}
       </div>
     </div>
   );
