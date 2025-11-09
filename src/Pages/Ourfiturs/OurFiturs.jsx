@@ -1,4 +1,5 @@
 import React from "react";
+import Marquee from "react-fast-marquee";
 
 const OurFeatures = () => {
   return (
@@ -24,6 +25,7 @@ const OurFeatures = () => {
           imgSrc="https://i.ibb.co.com/nNJbrFJp/images-2.png"
           title="React"
         />
+
         <FeatureCard
           imgSrc="https://i.ibb.co.com/kv9NPKr/images-3.png"
           title="MongoDB"
