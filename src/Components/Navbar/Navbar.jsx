@@ -83,6 +83,7 @@ const Navbar = () => {
         <img
           className="w-12 mr-2  rounded-[50%] object-center items-center object-cover"
           src={`${user ? user.photoURL : " "}`}
+          referrerPolicy="no-referrer"
           alt=""
         />
         {user ? (

@@ -36,6 +36,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/my-imports",
+        loader: () => fetch("http://localhost:3000/import-card"),
         element: (
           <PrivetRoute>
             <MyImports></MyImports>
