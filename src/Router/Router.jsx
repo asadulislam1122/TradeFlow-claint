@@ -8,6 +8,7 @@ import AddExport from "../Components/AddExport/AddExport";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import CardDetails from "../Pages/Details/CardDetails";
+import PrivetRoute from "../Components/PrivetRoute";
 
 export const router = createBrowserRouter([
   {
@@ -25,16 +26,41 @@ export const router = createBrowserRouter([
         loader: () => fetch("http://localhost:3000/cards"),
         Component: AllProducts,
       },
-      { path: "/my-exports", Component: MyExports },
-      { path: "/my-imports", Component: MyImports },
-      { path: "/add-export", Component: AddExport },
+      {
+        path: "/my-exports",
+        element: (
+          <PrivetRoute>
+            <MyExports></MyExports>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/my-imports",
+        element: (
+          <PrivetRoute>
+            <MyImports></MyImports>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/add-export",
+        element: (
+          <PrivetRoute>
+            <AddExport></AddExport>
+          </PrivetRoute>
+        ),
+      },
       { path: "/login", Component: Login },
       { path: "/register", Component: Register },
       {
         path: "/details/:id",
         loader: ({ params }) =>
           fetch(`http://localhost:3000/cards/${params.id}`),
-        Component: CardDetails,
+        element: (
+          <PrivetRoute>
+            <CardDetails></CardDetails>
+          </PrivetRoute>
+        ),
       },
     ],
   },

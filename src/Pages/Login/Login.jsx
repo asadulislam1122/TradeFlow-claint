@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import Marquee from "react-fast-marquee";
 import { FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -65,11 +65,11 @@ const Login = () => {
         <h2 className="text-3xl font-bold mb-2 text-center bg-gradient-to-r from-purple-400 to-indigo-500 text-transparent bg-clip-text">
           Welcome Back
         </h2>
-        <p className="text-gray-400 text-center mb-6">
+        <span className="text-gray-400 text-center mb-6">
           <Marquee pauseOnHover gradient={false}>
             Capture moments, create memories ✨
           </Marquee>
-        </p>
+        </span>
 
         <form onSubmit={handleLogin} className="flex flex-col space-y-5">
           {/* Email */}
@@ -138,12 +138,12 @@ const Login = () => {
           </button>
         </form>
 
-        <p className="text-sm text-gray-400 mt-6 text-center">
+        <span className="text-sm text-gray-400 mt-6 text-center">
           Don’t have an account?{" "}
           <Link className="underline text-purple-400 ml-2" to="/register">
             Register
           </Link>
-        </p>
+        </span>
       </div>
     </div>
   );

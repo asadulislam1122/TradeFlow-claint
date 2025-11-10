@@ -1,12 +1,12 @@
 import React, { use } from "react";
 import { AuthContext } from "../../Provaider/AuthProvaider";
-import { data } from "react-router";
 
 const AddExport = () => {
   const { user } = use(AuthContext);
   // console.log(user.email);
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const fromData = {
       name: e.target.name.value,
       price: e.target.price.value,

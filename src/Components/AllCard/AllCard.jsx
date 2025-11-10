@@ -48,14 +48,7 @@ const AllCard = ({ card }) => {
           </div>
           <div className="flex items-center gap-2 mt-1">
             <Calendar size={16} />
-            <span>
-              Added on:{" "}
-              {new Date(card.createdAT).toLocaleDateString("en-GB", {
-                day: "2-digit",
-                month: "short",
-                year: "numeric",
-              })}
-            </span>
+            <span>{card.createdAT}</span>
           </div>
         </div>
       </div>

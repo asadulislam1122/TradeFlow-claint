@@ -9,7 +9,7 @@ import AllCard from "../AllCard/AllCard";
 const Home = () => {
   const data = useLoaderData();
   const latestCard = data.result;
-  console.log(latestCard);
+  // console.log(latestCard);
 
   return (
     <div>
