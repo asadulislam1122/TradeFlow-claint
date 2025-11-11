@@ -163,7 +163,7 @@ const AddExport = () => {
       .then((data) => {
         toast.success("Successfully added product ✅");
         console.log(data);
-        navigate("/all-products"); // Redirect after success
+        navigate("/all-products");
       })
       .catch((err) => console.error(err));
   };

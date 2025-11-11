@@ -7,8 +7,42 @@ import {
   Globe2,
   DollarSign,
 } from "lucide-react";
+import Swal from "sweetalert2";
 
-const ExportCard = ({ card }) => {
+const ExportCard = ({ card, exportData, setExportData }) => {
+  const handleDelete = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3000/cards/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              const remaining = exportData.filter((c) => c._id !== _id);
+              setExportData(remaining);
+
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your Export Data has been deleted.",
+                icon: "success",
+                timer: 1000,
+              });
+            }
+          })
+          .catch((err) => console.error("Delete failed:", err));
+      }
+    });
+  };
+
   return (
     <div className="bg-white mb-6 shadow-md hover:shadow-xl rounded-2xl overflow-hidden transform hover:-translate-y-1 transition-all duration-300 flex flex-col">
       {/* Image */}
@@ -55,7 +89,10 @@ const ExportCard = ({ card }) => {
           </button>
 
           {/* Delete Button */}
-          <button className="flex items-center gap-1 bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-lg text-sm transition">
+          <button
+            onClick={() => handleDelete(card._id)}
+            className="flex items-center gap-1 bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-lg text-sm transition"
+          >
             <Trash2 size={16} /> Delete
           </button>
         </div>
