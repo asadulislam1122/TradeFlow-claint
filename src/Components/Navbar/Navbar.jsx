@@ -23,11 +23,12 @@ const Navbar = () => {
       <li>
         <NavLink to={"/all-Products"}>All Products</NavLink>
       </li>
-      <li>
-        <NavLink to={"/my-exports"}>My Exports</NavLink>
-      </li>
+
       <li>
         <NavLink to={"/my-imports"}>My Imports</NavLink>
+      </li>
+      <li>
+        <NavLink to={"/my-exports"}>My Exports</NavLink>
       </li>
       <li>
         <NavLink to={"/add-export"}>Add Exports</NavLink>
