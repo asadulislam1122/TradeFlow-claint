@@ -13,7 +13,7 @@ import {
 const CardDetails = () => {
   const data = useLoaderData();
   const card = data.result;
-  console.log(card);
+  // console.log(card);
 
   const navigate = useNavigate();
 
