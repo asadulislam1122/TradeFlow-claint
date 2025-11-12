@@ -9,7 +9,7 @@ const MyExports = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/my-export?email=${user.email}`)
+    fetch(`https://tradeflow-sarver.vercel.app/my-export?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setExportData(data);
@@ -31,6 +31,7 @@ const MyExports = () => {
 
   return (
     <div className="w-11/12 mx-auto">
+      <title>My Export Page</title>
       <h2 className="font-bold text-3xl text-blue-600 text-center mt-4 mb-4">
         My Exports <span className="text-green-600">{exportData.length}</span>
       </h2>

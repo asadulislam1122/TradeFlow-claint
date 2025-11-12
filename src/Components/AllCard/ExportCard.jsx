@@ -28,7 +28,7 @@ const ExportCard = ({ card, exportData, setExportData }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/cards/${_id}`, {
+        fetch(`https://tradeflow-sarver.vercel.app/cards/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -66,7 +66,7 @@ const ExportCard = ({ card, exportData, setExportData }) => {
       // createdAT: new Date(),
     };
     console.log(fromData);
-    fetch(`http://localhost:3000/cards/${card._id}`, {
+    fetch(`https://tradeflow-sarver.vercel.app/cards/${card._id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -180,7 +180,7 @@ const ExportCard = ({ card, exportData, setExportData }) => {
                   />
                 </div>
 
-                {/* Origin Country */}
+                {/* Country */}
                 <div>
                   <label className="block font-medium mb-1 dark:text-white text-gray-800">
                     Origin Country
@@ -195,7 +195,6 @@ const ExportCard = ({ card, exportData, setExportData }) => {
                   />
                 </div>
 
-                {/* Rating */}
                 <div>
                   <label className="block font-medium mb-1 dark:text-white text-gray-800">
                     Rating (0-5)
@@ -213,7 +212,6 @@ const ExportCard = ({ card, exportData, setExportData }) => {
                   />
                 </div>
 
-                {/* Quantity */}
                 <div>
                   <label className="block font-medium mb-1 dark:text-white text-gray-800">
                     Available Quantity
@@ -228,7 +226,6 @@ const ExportCard = ({ card, exportData, setExportData }) => {
                   />
                 </div>
 
-                {/* Image URL */}
                 <div>
                   <label className="block font-medium mb-1 dark:text-white text-gray-800">
                     Product Image URL
@@ -252,7 +249,6 @@ const ExportCard = ({ card, exportData, setExportData }) => {
               </form>
               <div className="modal-action">
                 <form method="dialog">
-                  {/* if there is a button in form, it will close the modal */}
                   <button className="btn">Close</button>
                 </form>
               </div>

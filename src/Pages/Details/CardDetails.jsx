@@ -33,7 +33,7 @@ const CardDetails = () => {
     setIsSubmitting(true);
     try {
       const res = await fetch(
-        `http://localhost:3000/cards/${card._id}/import`,
+        `https://tradeflow-sarver.vercel.app/cards/${card._id}/import`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -59,6 +59,7 @@ const CardDetails = () => {
 
   return (
     <div className="max-w-5xl mx-auto my-12 p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+      <title>Products Details page</title>
       {/* Layout */}
       <div className="flex flex-col md:flex-row items-center gap-10">
         {/* Left Side - Image */}

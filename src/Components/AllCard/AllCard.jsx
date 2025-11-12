@@ -7,6 +7,7 @@ const AllCard = ({ card }) => {
   return (
     <div className="bg-white rounded-2xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 p-4 cursor-pointer">
       {/* Product Image */}
+
       <div className="overflow-hidden rounded-xl">
         <img
           src={card.image}
@@ -28,7 +29,6 @@ const AllCard = ({ card }) => {
           <span>Origin: {card.country}</span>
         </div>
 
-        {/* Rating & Quantity same row */}
         <div className="flex items-center justify-between text-gray-500">
           <div className="flex items-center gap-2">
             <Star size={18} className="text-yellow-500" />
@@ -40,7 +40,6 @@ const AllCard = ({ card }) => {
           </div>
         </div>
 
-        {/* Created Info */}
         <div className="mt-3 text-sm text-gray-500 border-t pt-3">
           <div className="flex items-center gap-2">
             <User size={16} />
@@ -53,7 +52,6 @@ const AllCard = ({ card }) => {
         </div>
       </div>
 
-      {/* Button */}
       <Link to={`/details/${card._id}`}>
         {" "}
         <button className="mt-4 w-full bg-blue-600 text-white py-2 rounded-xl font-semibold hover:bg-blue-700 transition-colors">

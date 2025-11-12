@@ -15,9 +15,12 @@ const MyImports = () => {
     if (!confirmDelete) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/import-card/${id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `https://tradeflow-sarver.vercel.app/import-card/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       const data = await res.json();
 
       if (data.success) {
@@ -33,7 +36,8 @@ const MyImports = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className=" min-h-screen">
+      <title>My Import Page</title>
       <ToastContainer position="top-right" autoClose={3000} />
 
       <h2 className="text-blue-600 p-4 text-3xl mb-4 text-center font-bold">

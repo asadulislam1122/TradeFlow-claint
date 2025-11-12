@@ -1,10 +1,23 @@
-import React, { use } from "react";
+import React, { use, useEffect, useState } from "react";
 import { FcGlobe } from "react-icons/fc";
 import { Link, NavLink } from "react-router";
 import "./Navbar.css";
 import { AuthContext } from "../../Provaider/AuthProvaider";
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
+
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  useEffect(() => {
+    const html = document.querySelector("html");
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const handleTheme = (checked) => {
+    setTheme(checked ? "dark" : "light");
+  };
+
   const handleLogOut = () => {
     // console.log("user logout click");
     logOut()
@@ -39,6 +52,13 @@ const Navbar = () => {
       <li>
         <NavLink to={"/register"}>Register</NavLink>
       </li>
+      {/* them */}
+      <input
+        onChange={(e) => handleTheme(e.target.checked)}
+        type="checkbox"
+        defaultChecked={localStorage.getItem("theme") === "dark"}
+        className="toggle"
+      />
     </>
   );
   return (
@@ -54,7 +74,6 @@ const Navbar = () => {
               stroke="currentColor"
             >
               {" "}
-              z
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"

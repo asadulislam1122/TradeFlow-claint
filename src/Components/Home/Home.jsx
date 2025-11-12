@@ -13,6 +13,7 @@ const Home = () => {
 
   return (
     <div>
+      <title>Home Page</title>
       <Banner></Banner>
 
       <h2 className="text-blue-600 text-center font-bold text-3xl mt-8 mb-6">

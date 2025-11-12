@@ -9,21 +9,24 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import CardDetails from "../Pages/Details/CardDetails";
 import PrivetRoute from "../Components/PrivetRoute";
+import Loading from "../Loading/Loading";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayout,
+    hydrateFallbackElement: <Loading></Loading>,
+
     children: [
       {
         index: true,
+        loader: () => fetch("https://tradeflow-sarver.vercel.app/latest-cards"),
 
-        loader: () => fetch("http://localhost:3000/latest-cards"),
         Component: Home,
       },
       {
         path: "/all-Products",
-        loader: () => fetch("http://localhost:3000/cards"),
+        loader: () => fetch("https://tradeflow-sarver.vercel.app/cards"),
         Component: AllProducts,
       },
       {
@@ -36,7 +39,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/my-imports",
-        loader: () => fetch("http://localhost:3000/import-card"),
+        loader: () => fetch("https://tradeflow-sarver.vercel.app/import-card"),
         element: (
           <PrivetRoute>
             <MyImports></MyImports>
@@ -56,7 +59,7 @@ export const router = createBrowserRouter([
       {
         path: "/details/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/cards/${params.id}`),
+          fetch(`https://tradeflow-sarver.vercel.app/cards/${params.id}`),
         element: (
           <PrivetRoute>
             <CardDetails></CardDetails>
