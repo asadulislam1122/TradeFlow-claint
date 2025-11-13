@@ -5,6 +5,8 @@ import NewsLetter from "../../Pages/NewsLetter/NewsLetter";
 import Marquee from "react-fast-marquee";
 import { useLoaderData } from "react-router";
 import AllCard from "../AllCard/AllCard";
+import LeaderShip from "../../Pages/LeaderShip";
+import HeroSection from "../../Pages/HeroSection";
 
 const Home = () => {
   const data = useLoaderData();
@@ -16,6 +18,10 @@ const Home = () => {
       <title>Home Page</title>
       <Banner></Banner>
 
+      <section>
+        <HeroSection></HeroSection>
+      </section>
+
       <h2 className="text-blue-600 text-center font-bold text-3xl mt-8 mb-6">
         Latest Products{" "}
         <span className="text-green-600">({latestCard.length})</span>
@@ -25,7 +31,9 @@ const Home = () => {
           <AllCard key={card._id} card={card}></AllCard>
         ))}
       </div>
-
+      <section className="w-10/12 mx-auto">
+        <LeaderShip></LeaderShip>
+      </section>
       <section className="w-10/12 mx-auto">
         <OurFiturs></OurFiturs>
       </section>

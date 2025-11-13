@@ -5,7 +5,8 @@ const OurFeatures = () => {
   return (
     <div className="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
       <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-10">
-        Our Tech Stack 🛠️
+        <span className="text-blue-600">Our Tech</span>{" "}
+        <span className="text-green-500">Stack</span> 🛠️
       </h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 lg:gap-8">

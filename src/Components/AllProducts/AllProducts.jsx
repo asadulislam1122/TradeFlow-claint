@@ -15,7 +15,7 @@ const AllProducts = () => {
     const search = e.target.search.value;
     // console.log(search);
     setLoading(true);
-    fetch(`http://localhost:3000/search?search=${search}`)
+    fetch(`https://tradeflow-sarver.vercel.app/search?search=${search}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
