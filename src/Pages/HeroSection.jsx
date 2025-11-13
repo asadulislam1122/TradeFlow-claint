@@ -13,7 +13,7 @@ const HeroSection = () => {
             whileHover={{ scale: 1.03, color: "#2563eb" }} // hover = blue tint
             transition={{ type: "spring", stiffness: 200 }}
           >
-            Global Mobile Import & Export
+            Globall Mobile Import & Export
           </motion.h1>
 
           <motion.p
