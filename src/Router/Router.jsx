@@ -16,6 +16,7 @@ import AdminRoute from "./Privet/AdminRoute";
 import DashBoardHome from "../Pages/Dashboard/DashBoardHome";
 import Setting from "../Pages/Dashboard/Setting";
 import AboutUs from "../Components/AboutUs";
+import Contact from "../Pages/Dashboard/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -119,6 +120,14 @@ export const router = createBrowserRouter([
         element: (
           <AdminRoute>
             <UsersManagment></UsersManagment>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "contact",
+        element: (
+          <AdminRoute>
+            <Contact></Contact>
           </AdminRoute>
         ),
       },

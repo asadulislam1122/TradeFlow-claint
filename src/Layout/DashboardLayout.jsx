@@ -1,11 +1,17 @@
 import React from "react";
-import { FaDumpster, FaFileImport, FaUser } from "react-icons/fa";
+import {
+  FaDumpster,
+  FaFileContract,
+  FaFileImport,
+  FaUser,
+} from "react-icons/fa";
 import { FcGlobe } from "react-icons/fc";
 import { RiExportLine } from "react-icons/ri";
 import { TiExportOutline } from "react-icons/ti";
 import { Link, NavLink, Outlet } from "react-router";
 import useRole from "../Hooks/useRole";
 import { IoMdSettings } from "react-icons/io";
+import { MdContactMail } from "react-icons/md";
 
 const DashboardLayout = () => {
   const [role] = useRole();
@@ -142,6 +148,18 @@ const DashboardLayout = () => {
                     <span className="is-drawer-close:hidden">
                       Users Managment
                     </span>
+                  </NavLink>
+                </li>
+                {/* contact */}
+                <li>
+                  <NavLink
+                    to={"contact"}
+                    className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                    data-tip="All Contact"
+                  >
+                    {/* contact icon */}
+                    <MdContactMail />
+                    <span className="is-drawer-close:hidden">All Contact</span>
                   </NavLink>
                 </li>
               </>
