@@ -39,14 +39,14 @@ const ImportCart = ({ importcard, onDelete }) => {
         {/*remove button */}
         <div className="flex justify-between items-center gap-2 mt-6">
           <Link to={`/details/${cardId}`}>
-            <button className="flex items-center gap-1 bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg text-sm transition">
+            <button className="flex items-center gap-1 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg text-sm transition">
               <Eye size={16} /> See Details
             </button>
           </Link>
 
           <button
             onClick={() => onDelete(_id)}
-            className="flex items-center gap-1 bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-lg text-sm transition"
+            className="flex cursor-pointer items-center gap-1 bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-lg text-sm transition"
           >
             <Trash2 size={16} /> Remove
           </button>

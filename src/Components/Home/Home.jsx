@@ -7,6 +7,8 @@ import { useLoaderData } from "react-router";
 import AllCard from "../AllCard/AllCard";
 import LeaderShip from "../../Pages/LeaderShip";
 import HeroSection from "../../Pages/HeroSection";
+import OurServices from "../OurServices/OurServices";
+import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
 
 const Home = () => {
   const data = useLoaderData();
@@ -31,6 +33,18 @@ const Home = () => {
           <AllCard key={card._id} card={card}></AllCard>
         ))}
       </div>
+      <section
+        className="
+      w-10/12 mx-auto"
+      >
+        <OurServices></OurServices>
+      </section>
+      <section
+        className="
+      w-10/12 mx-auto"
+      >
+        <WhyChooseUs></WhyChooseUs>
+      </section>
       <section className="w-10/12 mx-auto">
         <LeaderShip></LeaderShip>
       </section>

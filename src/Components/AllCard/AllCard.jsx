@@ -5,7 +5,7 @@ import { Link } from "react-router";
 const AllCard = ({ card }) => {
   // console.log(card._id);
   return (
-    <div className="bg-white rounded-2xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 p-4 cursor-pointer">
+    <div className="bg-white rounded-2xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 p-4 ">
       {/* Product Image */}
 
       <div className="overflow-hidden rounded-xl">
@@ -21,29 +21,29 @@ const AllCard = ({ card }) => {
         <h2 className="text-xl font-semibold text-gray-800">{card.name}</h2>
 
         <p className="text-gray-600 font-medium">
-          Price: <span className="text-green-600 font-bold">৳{card.price}</span>
+          <span className="text-green-600 font-bold">৳{card.price}</span>
         </p>
 
         <div className="flex items-center gap-2 text-gray-500">
           <Globe2 size={18} />
-          <span>Origin: {card.country}</span>
+          <span> {card.country}</span>
         </div>
 
         <div className="flex items-center justify-between text-gray-500">
           <div className="flex items-center gap-2">
             <Star size={18} className="text-yellow-500" />
-            <span>Rating: {card.rating}</span>
+            <span> {card.rating}</span>
           </div>
           <div className="flex items-center gap-2">
             <Package size={18} />
-            <span>Available: {card.quantity}</span>
+            <span> {card.quantity}</span>
           </div>
         </div>
 
         <div className="mt-3 text-sm text-gray-500 border-t pt-3">
           <div className="flex items-center gap-2">
             <User size={16} />
-            <span>Added by: {card.created_by}</span>
+            <span> {card.created_by}</span>
           </div>
           <div className="flex items-center gap-2 mt-1">
             <Calendar size={16} />
@@ -54,7 +54,7 @@ const AllCard = ({ card }) => {
 
       <Link to={`/details/${card._id}`}>
         {" "}
-        <button className="mt-4 w-full bg-blue-600 text-white py-2 rounded-xl font-semibold hover:bg-blue-700 transition-colors">
+        <button className="mt-4 w-full cursor-pointer bg-blue-600 text-white py-2 rounded-xl font-semibold hover:bg-blue-700 transition-colors">
           See Details
         </button>
       </Link>

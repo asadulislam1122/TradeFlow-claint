@@ -10,6 +10,12 @@ import Register from "../Pages/Register/Register";
 import CardDetails from "../Pages/Details/CardDetails";
 import PrivetRoute from "../Components/PrivetRoute";
 import Loading from "../Loading/Loading";
+import DashboardLayout from "../Layout/DashboardLayout";
+import UsersManagment from "../Pages/Dashboard/UsersManagment/UsersManagment";
+import AdminRoute from "./Privet/AdminRoute";
+import DashBoardHome from "../Pages/Dashboard/DashBoardHome";
+import Setting from "../Pages/Dashboard/Setting";
+import AboutUs from "../Components/AboutUs";
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +29,10 @@ export const router = createBrowserRouter([
         loader: () => fetch("https://tradeflow-sarver.vercel.app/latest-cards"),
 
         Component: Home,
+      },
+      {
+        path: "about",
+        Component: AboutUs,
       },
       {
         path: "/all-Products",
@@ -65,6 +75,56 @@ export const router = createBrowserRouter([
             <CardDetails></CardDetails>
           </PrivetRoute>
         ),
+      },
+    ],
+  },
+  // dashboard
+  {
+    path: "dashboard",
+    element: (
+      <PrivetRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivetRoute>
+    ),
+
+    children: [
+      {
+        index: true,
+        Component: DashBoardHome,
+      },
+      {
+        path: "my-exports",
+        element: (
+          <AdminRoute>
+            <MyExports></MyExports>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "add-export",
+        element: (
+          <AdminRoute>
+            {" "}
+            <AddExport></AddExport>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "my-imports",
+        loader: () => fetch("https://tradeflow-sarver.vercel.app/import-card"),
+        element: <MyImports></MyImports>,
+      },
+      {
+        path: "users-managment",
+        element: (
+          <AdminRoute>
+            <UsersManagment></UsersManagment>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "setting",
+        element: <Setting></Setting>,
       },
     ],
   },

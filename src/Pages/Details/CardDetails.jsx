@@ -112,7 +112,7 @@ const CardDetails = () => {
           <div className="pt-4 text-right">
             <button
               onClick={() => setShowModal(true)}
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full shadow-md transition-all"
+              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full shadow-md transition-all cursor-pointer"
             >
               <ShoppingCart size={20} />
               Import Now
@@ -156,7 +156,7 @@ const CardDetails = () => {
                 <button
                   type="button"
                   onClick={() => setShowModal(false)}
-                  className="px-4 py-2 rounded-md border"
+                  className="px-4 cursor-pointer py-2 rounded-md border"
                 >
                   Cancel
                 </button>
@@ -167,7 +167,7 @@ const CardDetails = () => {
                   className={`px-4 py-2 rounded-md text-white ${
                     submitDisabled
                       ? "bg-gray-400 cursor-not-allowed"
-                      : "bg-blue-600 hover:bg-blue-700"
+                      : "bg-blue-600 cursor-pointer hover:bg-blue-700"
                   }`}
                 >
                   {isSubmitting ? "Importing..." : "Submit"}

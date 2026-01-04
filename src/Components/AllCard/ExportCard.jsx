@@ -133,7 +133,7 @@ const ExportCard = ({ card, exportData, setExportData }) => {
           {/* Update Button */}
           <button
             onClick={handleModalOpenUpdate}
-            className="flex items-center gap-1 bg-pink-500 hover:bg-pink-600 text-white px-3 py-2 rounded-lg text-sm transition"
+            className="flex items-center gap-1 bg-pink-500 hover:bg-pink-600 text-white px-3 py-2 rounded-lg text-sm cursor-pointer transition"
           >
             <Pencil size={16} /> Update
           </button>
@@ -258,7 +258,7 @@ const ExportCard = ({ card, exportData, setExportData }) => {
           {/* Delete Button */}
           <button
             onClick={() => handleDelete(card._id)}
-            className="flex items-center gap-1 bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-lg text-sm transition"
+            className="flex cursor-pointer items-center gap-1 bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-lg text-sm transition"
           >
             <Trash2 size={16} /> Delete
           </button>
